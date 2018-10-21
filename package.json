@@ -1,0 +1,39 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js 2>&1 | bunyan",
+    "lint": "./node_modules/.bin/eslint \"**/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fibos-team/api.git"
+  },
+  "keywords": [
+    "fibos",
+    "monitor"
+  ],
+  "author": "paddingme",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fibos-team/api/issues"
+  },
+  "homepage": "https://github.com/fibos-team/api#readme",
+  "devDependencies": {
+    "eslint": "^5.7.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.12",
+    "dotenv": "^6.1.0",
+    "mysql": "^2.16.0",
+    "posix-getopt": "^1.2.0",
+    "restify": "^7.2.1"
+  }
+}
