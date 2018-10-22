@@ -2,7 +2,7 @@
  * @Author: PaddingMe (BP:liuqiangdong)
  * @Date: 2018-10-21 16:55:25
  * @Last Modified by: PaddingMe
- * @Last Modified time: 2018-10-21 18:02:15
+ * @Last Modified time: 2018-10-23 00:28:49
  */
 
 const assert = require('assert-plus')
@@ -19,7 +19,7 @@ function createServer (options) {
 
   const server = restify.createServer({
     log: options.log,
-    name: 'liuqiangdong API',
+    name: 'Fibos API made with ❤️ by liuqiangdong',
     version: '1.0.0' // 版本暂定都默认为 1.0.0
   })
 
@@ -44,6 +44,11 @@ function createServer (options) {
     })
   )
 
+  server.use((req, res, next) => {
+    res.removeHeader('Server')
+    next()
+  })
+
   server.use(restify.plugins.acceptParser(server.acceptable))
   server.use(restify.plugins.dateParser())
   server.use(restify.plugins.authorizationParser())
@@ -56,8 +61,24 @@ function createServer (options) {
 
   server.get('/', (req, res, next) => {
     let routes = [
-      'GET     /',
-      'GET    /api/rewards'
+      'GET  /',
+      'GET  /api/rewards',
+      'POST /v1/chain/get_info',
+      'POST /v1/chain/get_block',
+      'POST /v1/chain/get_block_header_state',
+      'POST /v1/chain/get_account',
+      'POST /v1/chain/get_code',
+      'POST /v1/chain/get_raw_code_and_abi',
+      'POST /v1/chain/get_table_rows',
+      'POST /v1/chain/get_currency_balance',
+      'POST /v1/chain/abi_json_to_bin',
+      'POST /v1/chain/abi_bin_to_json',
+      'POST /v1/chain/get_required_keys',
+      'POST get_currency_stats',
+      'POST /v1/chain/get_producers',
+      'POST /v1/chain/push_block',
+      'POST /v1/chain/push_transaction',
+      'POST /v1/chain/push_transactions'
     ]
     res.send(200, routes)
     next()
