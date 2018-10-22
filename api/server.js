@@ -2,7 +2,7 @@
  * @Author: PaddingMe (BP:liuqiangdong)
  * @Date: 2018-10-21 16:55:25
  * @Last Modified by: PaddingMe
- * @Last Modified time: 2018-10-23 00:28:49
+ * @Last Modified time: 2018-10-23 00:44:45
  */
 
 const assert = require('assert-plus')
@@ -19,7 +19,7 @@ function createServer (options) {
 
   const server = restify.createServer({
     log: options.log,
-    name: 'Fibos API made with ❤️ by liuqiangdong',
+    name: 'fibos monitor api',
     version: '1.0.0' // 版本暂定都默认为 1.0.0
   })
 
