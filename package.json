@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js 2>&1 | bunyan",
-    "lint": "./node_modules/.bin/eslint \"**/*.js\""
+    "lint": "./node_modules/.bin/eslint \"**/*.js\"",
+    "prd": "pm2 start npm --name api -- start "
   },
   "repository": {
     "type": "git",
