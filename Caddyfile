@@ -1,0 +1,17 @@
+monitor.fibos.team {
+  gzip
+
+  log /var/caddy/monitor.log
+
+  proxy /v1 localhost:8870 {
+    transparent
+  }
+
+  proxy / localhost:8080 {
+    transparent
+  }
+  header / Access-Control-Allow-Origin  *
+  header / Access-Control-Allow-Methods "GET, POST, OPTIONS"
+  header / X-Fibos-Bp "liuqiangdong"
+  header / Server "Fibos api Made with ❤️ by liuqiangdong"
+}
