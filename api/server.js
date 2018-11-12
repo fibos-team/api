@@ -2,7 +2,7 @@
  * @Author: PaddingMe (BP:liuqiangdong)
  * @Date: 2018-10-21 16:55:25
  * @Last Modified by: PaddingMe
- * @Last Modified time: 2018-11-12 21:06:09
+ * @Last Modified time: 2018-11-12 21:53:02
  */
 
 const assert = require('assert-plus')
@@ -80,7 +80,7 @@ function createServer (options) {
       'POST /v1/chain/abi_json_to_bin',
       'POST /v1/chain/abi_bin_to_json',
       'POST /v1/chain/get_required_keys',
-      'POST get_currency_stats',
+      'POST /v1/chain/get_currency_stats',
       'POST /v1/chain/get_producers',
       'POST /v1/chain/push_block',
       'POST /v1/chain/push_transaction',
