@@ -2,13 +2,13 @@
  * @Author: PaddingMe (BP:liuqiangdong)
  * @Date: 2018-10-21 17:07:41
  * @Last Modified by: PaddingMe
- * @Last Modified time: 2018-10-21 21:39:24
+ * @Last Modified time: 2018-11-12 20:58:20
  */
 
 const MAX_LIMIT = 30
 const pool = require('../utils/database')
 
-const getRewards = async (req, res, next) => {
+exports.getRewards = async (req, res, next) => {
   let page = req.query.page > 0 ? req.query.page : 1
   let bp = req.query.bp
   let queryLimit = req.query.limit || MAX_LIMIT
@@ -92,5 +92,3 @@ const getRewards = async (req, res, next) => {
   }
   next()
 }
-
-module.exports = getRewards

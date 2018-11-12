@@ -31,8 +31,10 @@
     "eslint-plugin-standard": "^4.0.0"
   },
   "dependencies": {
+    "aws-sdk": "^2.353.0",
     "bunyan": "^1.8.12",
     "dotenv": "^6.1.0",
+    "filesize": "^3.6.1",
     "mysql": "^2.16.0",
     "posix-getopt": "^1.2.0",
     "restify": "^7.2.1"

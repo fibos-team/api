@@ -2,14 +2,14 @@
  * @Author: PaddingMe (BP:liuqiangdong)
  * @Date: 2018-10-21 16:55:25
  * @Last Modified by: PaddingMe
- * @Last Modified time: 2018-10-23 00:44:45
+ * @Last Modified time: 2018-11-12 21:06:09
  */
 
 const assert = require('assert-plus')
 const restify = require('restify')
-const getRewards = require('../services/getRewards')
-var bunyan = require('bunyan')
-
+const bunyan = require('bunyan')
+const { getRewards } = require('../controllers/rewards')
+const { getBackups, putBackups } = require('../controllers/backups')
 /**
  * Returns a server with all routes defined on it
  */
@@ -59,10 +59,16 @@ function createServer (options) {
   server.get('/api/rewards', getRewards)
   server.head('/api/rewards', getRewards)
 
+  server.get('/api/backups', getBackups)
+  server.head('/api/backups', getBackups)
+
+  server.put('/api/backups', putBackups)
+
   server.get('/', (req, res, next) => {
     let routes = [
       'GET  /',
       'GET  /api/rewards',
+      'GET  /api/backups',
       'POST /v1/chain/get_info',
       'POST /v1/chain/get_block',
       'POST /v1/chain/get_block_header_state',
