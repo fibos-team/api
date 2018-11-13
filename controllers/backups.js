@@ -2,7 +2,7 @@
  * @Author: PaddingMe (BP:liuqiangdong)
  * @Date: 2018-11-12 20:07:33
  * @Last Modified by: PaddingMe
- * @Last Modified time: 2018-11-12 21:29:09
+ * @Last Modified time: 2018-11-13 23:54:57
  */
 
 const AWS = require('aws-sdk')
@@ -71,6 +71,7 @@ exports.putBackups = async (req, res, next) => {
         return {
           name: item.Key,
           s3url: `${process.env.S3_URL_PREFIX}${item.Key}`,
+          qingUrl: `${process.env.QING_URL_PREFIX}${item.Key}`,
           size: filesize(item.Size),
           md5chksum: item.head && item.head.Metadata && item.head.Metadata.md5chksum,
           updated: item.LastModified
