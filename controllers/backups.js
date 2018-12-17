@@ -58,7 +58,7 @@ async function s3ListObjects (params, s3DataContents, includeHead) {
 
 let s3DataContents = []
 
-exports.putBackups = async (req, res, next) => {
+exports.getBackups = async (req, res, next) => {
   try {
     const includeHead = true
     const data = await s3ListObjects({
@@ -92,7 +92,7 @@ exports.putBackups = async (req, res, next) => {
   }
 }
 
-exports.getBackups = (req, res, next) => {
+exports.putBackups = (req, res, next) => {
   // TODO  should get in database
   return fs.readFile(path.resolve(__dirname, './backups.json'), 'utf8', (err, data) => {
     if (err) {
